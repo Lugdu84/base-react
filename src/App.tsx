@@ -1,11 +1,13 @@
-import { Form } from "./components/Form"
+import { FormControlled } from "./components/FormControllled"
+import { FormUnControlled } from "./components/FormUncontrolled"
 import { Title } from "./components/Title"
 
 function App() {
 
   return <>
     <Title name="Apprendre React avec Vite" color="blue" />
-    <Form />
+    <FormControlled />
+    <FormUnControlled />
   </>
 }
 
