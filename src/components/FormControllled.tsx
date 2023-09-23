@@ -1,27 +1,33 @@
 import { useState } from "react"
+import { CGUCheckbox } from "./CGUCheckbox"
 
 
 export const FormControlled = () => {
   const [name, setName] = useState('')
   const [checked, setChecked] = useState(false)
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value)
-  }
 
   const toggleChecked = () => {
     setChecked(!checked)
+  }
+
+  const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value)
+  }
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
   }
 
   console.log('name', name)
   console.log('checked', checked)
   
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h2>Form Controlled</h2>
-          <input type="text" value={name} onChange={handleChange} />
-          <input type="checkbox" checked={checked} onChange={toggleChecked} />
-          <button type="submit">Envoyer</button>
+      <input name="name" type="text" value={name} onChange={handleChangeName} />
+      <CGUCheckbox checked={checked} onCheck={toggleChecked} />
+      <button type="submit">Envoyer</button>
     </form>
   )
 }
