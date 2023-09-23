@@ -18,16 +18,13 @@ export const FormControlled = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
   }
-
-  console.log('name', name)
-  console.log('checked', checked)
   
   return (
     <form onSubmit={handleSubmit}>
       <h2>Form Controlled</h2>
       <input name="name" type="text" value={name} onChange={handleChangeName} />
       <CGUCheckbox checked={checked} onCheck={toggleChecked} />
-      <button type="submit">Envoyer</button>
+      <button disabled={!checked} type="submit">Envoyer</button>
     </form>
   )
 }
