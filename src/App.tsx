@@ -1,6 +1,10 @@
+import { Title } from "./components/Title"
+
 function App() {
 
-  return "bonjour les gens"
+  return <>
+    <Title name="Hello World" color="blue" />
+  </>
 }
 
 export default App
