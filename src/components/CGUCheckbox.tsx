@@ -1,11 +1,12 @@
 
 type CGUCheckboxProps = {
     checked: boolean;
-    onCheck: () => void;
+    onCheck: (isChecked: boolean) => void;
 }
 
-export const CGUCheckbox = ({ checked, onCheck} : CGUCheckboxProps) => {
+export const CGUCheckbox = ({ checked, onCheck }: CGUCheckboxProps) => {
+    
   return (
-    <input type="checkbox" checked={checked} onChange={onCheck} />
+    <input type="checkbox" checked={checked} onChange={(e) => onCheck(e.target.checked)} />
   )
 }

@@ -7,8 +7,8 @@ export const FormControlled = () => {
   const [checked, setChecked] = useState(false)
 
 
-  const toggleChecked = () => {
-    setChecked(!checked)
+  const toggleChecked = (isChecked: boolean) => {
+    setChecked(isChecked)
   }
 
   const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
