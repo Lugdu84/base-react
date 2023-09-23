@@ -3,7 +3,7 @@ import { Title } from "./components/Title"
 function App() {
 
   return <>
-    <Title name="Hello World" color="blue" />
+    <Title name="Apprendre React avec Vite" color="blue" />
   </>
 }
 

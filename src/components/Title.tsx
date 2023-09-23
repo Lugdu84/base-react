@@ -6,7 +6,7 @@ type TitleProps = {
 
 export const Title = ({name, color} : TitleProps) => {
   return (
-    <h1 style={{ color: color}}>{ name }</h1>
+    <h1 style={{ color: color, textAlign: "center"}}>{ name }</h1>
   )
 }
 
