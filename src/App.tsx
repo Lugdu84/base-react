@@ -1,6 +1,7 @@
 import { FormControlled } from "./components/FormControllled"
 import { FormUnControlled } from "./components/FormUncontrolled"
 import { Title } from "./components/Title"
+import './index.css'
 
 function App() {
 
