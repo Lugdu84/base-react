@@ -1,3 +1,4 @@
+import Input from "./Input"
 
 
 export const FormUnControlled = () => {
@@ -12,11 +13,13 @@ export const FormUnControlled = () => {
   }
   
   return (
-    <form onSubmit={handleSubmit}>
+    <form className=" w-9/12 md:w-1/2 flex flex-col gap-2 p-2 border border-blue-700 rounded-lg" onSubmit={handleSubmit}>
       <h2>Form UnControlled</h2>
-          <input name="name" type="text" defaultValue={""}  />
-          <input name="checked" type="checkbox" defaultChecked={false} />
-          <button type="submit">Envoyer</button>
+      <Input name="name" type="text" label="Nom" defaultValue="" />
+      {/* <input name="name" type="text" defaultValue={""}  /> */}
+      <Input name="checked" type="checkbox" label="CGU" defaultChecked={false} />
+          {/* <input name="checked" type="checkbox" defaultChecked={false} /> */}
+          <button className="w-full bg-green-600 rounded-md py-2" type="submit">Envoyer</button>
     </form>
   )
 }
