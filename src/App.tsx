@@ -5,11 +5,11 @@ import './index.css'
 
 function App() {
 
-  return <>
+  return <div className="flex flex-col items-center gap-4">
     <Title name="Apprendre React avec Vite" color="blue" />
     <FormControlled />
     <FormUnControlled />
-  </>
+  </div>
 }
 
 export default App
