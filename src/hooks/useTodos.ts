@@ -44,13 +44,9 @@ const reducerTodos = (state: State, action: Action) => {
                 return state
         }
     }
-export function useTodos() {
+export function useTodos(initialTodos: Todo[] = []) {
     const [state, dispatch] = useReducer(reducerTodos, {
-        todos: [
-            { id: 1, title: 'Faire la vaisselle', completed: false },
-            { id: 2, title: 'Faire la lessive', completed: false },
-            { id: 3, title: 'Faire le ménage', completed: false },
-        ],
+        todos: initialTodos,
         showCompleted: false
     })
     const visibleTodos = state.showCompleted ? state.todos : state.todos.filter((todo: Todo) => !todo.completed)
@@ -64,4 +60,3 @@ export function useTodos() {
         addTodo: useCallback((todo: Todo) => dispatch({ type: 'ADD_TODO', payload: todo }), []) 
     }
 }
-
