@@ -2,6 +2,7 @@ import { FormControlled } from "./components/FormControllled"
 import { FormUnControlled } from "./components/FormUncontrolled"
 import { ShowIncrement } from "./components/ShowIncrement"
 import { Title } from "./components/Title"
+import Todos from "./components/Todos"
 import { Post, useFetch } from "./hooks/useFetch"
 import './index.css'
 import React from "react"
@@ -22,7 +23,8 @@ function App() {
         {data.map((post: Post) => <li key={post.id}>Title : {post.title}</li>)}
       </ul>
       </div>
-      }
+    }
+    <Todos />
   </div>
 }
 
