@@ -1,5 +1,6 @@
 import { FormControlled } from "./components/FormControllled"
 import { FormUnControlled } from "./components/FormUncontrolled"
+import { ShowIncrement } from "./components/ShowIncrement"
 import { Title } from "./components/Title"
 import './index.css'
 
@@ -9,6 +10,7 @@ function App() {
     <Title name="Apprendre React avec Vite" color="blue" />
     <FormControlled />
     <FormUnControlled />
+    <ShowIncrement />
   </div>
 }
 
