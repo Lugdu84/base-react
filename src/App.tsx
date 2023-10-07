@@ -4,6 +4,7 @@ import { ShowIncrement } from "./components/ShowIncrement"
 import { Title } from "./components/Title"
 import { Post, useFetch } from "./hooks/useFetch"
 import './index.css'
+import React from "react"
 
 function App() {
 
