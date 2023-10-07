@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import useIncrement from '../../hooks/useIncrement';
+import useIncrement from '../../src/hooks/useIncrement';
 
 describe('useIncrement', () => {
   it("should return the correct initial count if no speciiefd", () => {

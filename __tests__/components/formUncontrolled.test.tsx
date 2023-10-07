@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import { FormUnControlled } from '../../components/FormUncontrolled'
+import { FormUnControlled } from '../../src/components/FormUncontrolled'
 
 describe('FormUnControlled', () => {
   it('should render the form with the correct inputs', () => {
