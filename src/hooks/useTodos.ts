@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useCallback, useReducer } from "react";
 
 export type Todo = {
     id: number;
@@ -38,7 +38,6 @@ const reducerTodos = (state: State, action: Action) => {
                 return { ...state, todos: state.todos.map((todo: Todo) => todo.id === action.payload.id ? { ...todo, completed: !todo.completed } : todo) }
             case 'REMOVE_CHECKED_TODOS':
                 return { ...state, todos: state.todos.filter((todo: Todo) => !todo.completed) }
-            
             case 'SHOW_COMPLETED':
                 return { ...state, showCompleted: !state.showCompleted }
             default:
@@ -54,6 +53,15 @@ export function useTodos() {
         ],
         showCompleted: false
     })
-    return { state, dispatch }
+    const visibleTodos = state.showCompleted ? state.todos : state.todos.filter((todo: Todo) => !todo.completed)
+    return {
+        visibleTodos,
+        showCompleted: state.showCompleted,
+        toggleTodo: useCallback( (todo: Todo) => dispatch({ type: 'TOGGLE_TODO', payload: todo }), []) ,
+        removeTodo: useCallback( (todo: Todo) => dispatch({ type: 'REMOVE_TODO', payload: todo }), []),
+        clearCompleted: useCallback(() => dispatch({ type: 'REMOVE_CHECKED_TODOS' }), []) ,
+        toggleFilter: useCallback(() => dispatch({ type: 'SHOW_COMPLETED' }), []) ,
+        addTodo: useCallback((todo: Todo) => dispatch({ type: 'ADD_TODO', payload: todo }), []) 
+    }
 }
 
