@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import React, { useMemo, useState } from "react"
 import { CGUCheckbox } from "./CGUCheckbox"
 import Input from "./Input"
 

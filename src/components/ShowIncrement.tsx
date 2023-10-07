@@ -1,4 +1,5 @@
 import useIncrement from '../hooks/useIncrement';
+import React from 'react';
 
 export const ShowIncrement = () => {
     const { count, increment, decrement } = useIncrement({ initialValue: 4 });
