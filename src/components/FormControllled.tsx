@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from "react"
+import React, { useMemo, useState} from "react"
 import { CGUCheckbox } from "./CGUCheckbox"
 import Input from "./Input"
+import Infos from "./Infos"
 
 
 const passwordSecurity = (test: string) => test.length > 8 ? 'Fort' : 'Faible'
@@ -39,6 +40,7 @@ export const FormControlled = () => {
       <Input name="mail" type="text" onChange={handleChangeMail} value={mail} label="Mail" />
       <Input name="password" type="password" onChange={handleChangePassword} value={password} label="Mot de passe" />
       <p>La sécurité de votre mot de passe est : {security}</p>
+      <Infos />
       <CGUCheckbox checked={checked} onCheck={toggleChecked} />
       <button className="w-full bg-green-600 rounded-md py-2" disabled={!checked} type="submit">Envoyer</button>
     </form>
