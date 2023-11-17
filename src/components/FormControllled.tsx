@@ -6,6 +6,7 @@ import Infos from "./Infos"
 
 const passwordSecurity = (test: string) => test.length > 8 ? 'Fort' : 'Faible'
 
+
 export const FormControlled = () => {
   const [mail, setMail] = useState('')
   const [password, setPassword] = useState('')
@@ -29,9 +30,12 @@ export const FormControlled = () => {
   }
 
   const security = useMemo(() => {
-    console.log('Calcul de la sécurité')
+    console.log('Calcul de la sécurité dans le useMemo')
     return passwordSecurity(password)
   }, [password])
+
+  console.log('mail', mail)
+  console.log('name', password)
 
   
   return (

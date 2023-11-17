@@ -5,11 +5,10 @@ import { Title } from "./components/Title"
 import Todos from "./components/Todos"
 import { Post, useFetch } from "./hooks/useFetch"
 import './index.css'
-import React from "react"
 
 function App() {
 
-  const { loading, data, errors } = useFetch({url: 'https://jsonplaceholder.typicode.com/posts', limit: 10})
+  const { loading, data, errors } = useFetch({url: 'https://jsonplaceholder.typicode.com/posts', limit: 2})
 
   return <div className="flex flex-col items-center gap-4">
     <Title name="Apprendre React avec Vite" color="blue" />

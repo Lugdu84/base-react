@@ -6,9 +6,10 @@ const InfosMemo = memo( function Infos() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setShow(true);
-        }, 2000);
+        }, 5000);
         return () => clearTimeout(timer);
     }, []);
+
 
     return (
         <div style={{ display: show ? 'block' : 'none' }}>
