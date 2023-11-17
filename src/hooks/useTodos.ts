@@ -27,7 +27,6 @@ type State = {
     showCompleted: boolean
 }
 
-
 const reducerTodos = (state: State, action: Action) => {
         switch (action.type) {
             case 'ADD_TODO':

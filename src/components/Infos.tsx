@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from 'react'
+import { useState, useEffect, memo } from 'react'
 
 const InfosMemo = memo( function Infos() {
     const [show, setShow] = useState(false);
